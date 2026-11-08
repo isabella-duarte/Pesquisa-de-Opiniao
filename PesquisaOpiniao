@@ -1,0 +1,41 @@
+#Contadores para armazenar os totais solicitados
+total_excelente = 0
+total_ruim = 0
+
+#Pesquisa com 10 entrevistados!
+total_entrevistados = 10
+
+print("=" * 45)
+print("PESQUISA DE SATISFAÇÃO - TUDOWEB")
+print("=" * 45)
+
+for i in range (1, total_entrevistados +1) :
+    print (f"\n--- Entrevistado {i} de {total_entrevistados} ---")
+
+    nome = input ("Digite seu nome: ").strip()
+    idade = int(input("Digite sua idade:"))
+
+    print ("Dê sua opinião sobre o atendimento, sendo:")
+    print("1 - EXCELENTE")
+    print("2 - BOM")
+    print("3 - RUIM")
+
+    opiniao = int(input("Selecione uma das opções (1, 2 ou 3): "))
+
+    #Estrutura de decisão para contabilizar as opiniões:
+    if opiniao == 1 :
+        total_excelente +=1
+    elif opiniao == 3 :
+        total_ruim += 1 
+    elif opiniao == 2 :
+        pass # Voto registrado, mas não contabilizado na estatística
+    else:
+        print ("Opinião inválida digitada (não contabilizada nas opções válidas).")
+
+# Exibição do relatório final:
+print("\n" + "=" * 45)
+print(" RESULTADO DA PESQUISA ")
+print("=" * 45)
+print(f"a) Quantidade de respostas 'EXCELENTE': {total_excelente}")
+print(f"b) Quantidade de respotsas 'RUIM' : {total_ruim}")
+print("=" * 45)
